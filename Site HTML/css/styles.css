@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+:root {
+    --chorale-blue: #004694;    /* Bleu Chorale foncé */
+    --chorale-orange: #FF8C00;  /* Orange Vif pour l'accentuation */
+    --chorale-white: #ffffff;
+    --chorale-light-gray: #f4f4f4;
+    --chorale-text-dark: #333333;
+}
+
+/* Base et Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--chorale-text-dark);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--chorale-blue);
+}
+
+ul {
+    list-style: none;
+}
+
+/* =================================
+   HEADER / TOP PAGE
+   ================================= */
+.top-page {
+    /* Fond bleu uni pour remplacer le background image */
+    background-color: var(--chorale-blue);
+    height: 80vh; /* Hauteur réduite car pas d'image de fond */
+    display: flex;
+    flex-direction: column;
+    color: var(--chorale-white);
+    padding: 0 5%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--chorale-white);
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: var(--chorale-white);
+    font-weight: 700;
+    padding-bottom: 5px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--chorale-orange); /* Orange au survol */
+    border-bottom: 2px solid var(--chorale-orange);
+}
+
+.landing-page {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.big-title {
+    font-size: 4.5em;
+    margin-bottom: 40px;
+}
+
+.scroll-down {
+    color: var(--chorale-white);
+    font-size: 1.2em;
+    border: 2px solid var(--chorale-orange);
+    background-color: var(--chorale-orange);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.scroll-down:hover {
+    background-color: var(--chorale-white);
+    color: var(--chorale-blue);
+    border: 2px solid var(--chorale-white);
+}
+
+/* =================================
+   SECTION SERVICES (Navigation rapide)
+   ================================= */
+.services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 5%;
+    background-color: var(--chorale-light-gray);
+    text-align: center;
+}
+
+.service-item {
+    width: 30%;
+    transition: transform 0.3s;
+}
+
+.service-item a {
+    display: block;
+    color: var(--chorale-text-dark);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.delivery-icon {
+    font-size: 3.5em;
+    color: var(--chorale-blue); /* Icônes en bleu */
+    margin-bottom: 10px;
+}
+
+.service-detail {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* =================================
+   SECTIONS D'INFORMATION (CLUB, PALMARÈS, SALLE)
+   ================================= */
+.info-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.alternate-bg {
+    background-color: var(--chorale-light-gray);
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: var(--chorale-blue);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Remplacement des images par des blocs de contenu */
+.placeholder-content {
+    width: 45%;
+    max-width: 500px;
+    height: 300px; /* Taille fixe pour le bloc */
+    border-radius: 10px;
+    background-color: var(--chorale-blue); /* Fond bleu pour les blocs */
+    color: var(--chorale-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.info-text {
+    width: 55%;
+    font-size: 1.1em;
+}
+
+.info-text p {
+    margin-bottom: 20px;
+}
+
+/* Styles spécifiques aux icônes de remplacement */
+.club-icon, .salle-icon {
+    font-size: 5em;
+    margin-bottom: 10px;
+    color: var(--chorale-orange); /* Orange pour l'icône dans le bloc bleu */
+}
+
+.palmares-icon {
+    font-size: 8em;
+    color: var(--chorale-orange);
+}
+
+/* Inversion de l'ordre pour la section palmarès */
+#palmares .info-content {
+    flex-direction: row-reverse;
+}
+
+/* =================================
+   FOOTER
+   ================================= */
+footer {
+    background-color: var(--chorale-blue);
+    color: var(--chorale-white);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* =================================
+   RESPONSIVE DESIGN (Pour les petits écrans)
+   ================================= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        margin-top: 15px;
+    }
+
+    .big-title {
+        font-size: 3em;
+    }
+
+    .services {
+        flex-direction: column;
+    }
+
+    .service-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .info-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .placeholder-content, .info-text {
+        width: 100%;
+    }
+
+    #palmares .info-content {
+        flex-direction: column; /* Supprime l'inversion sur mobile */
+    }
+}
